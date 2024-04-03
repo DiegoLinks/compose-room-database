@@ -7,7 +7,7 @@ interface ContactRepository {
 
     fun getItemStream(id: Int): Flow<Contact?>
 
-    suspend fun insertItem(contact: Contact)
+    suspend fun insertContact(contact: Contact)
 
     suspend fun deleteItem(contact: Contact)
 

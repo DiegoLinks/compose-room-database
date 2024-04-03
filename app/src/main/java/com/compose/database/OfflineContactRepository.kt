@@ -7,7 +7,7 @@ class OfflineContactRepository(private val itemDao: ContactDao) : ContactReposit
 
     override fun getItemStream(id: Int): Flow<Contact?> = itemDao.getItem(id)
 
-    override suspend fun insertItem(contact: Contact) = itemDao.insert(contact)
+    override suspend fun insertContact(contact: Contact) = itemDao.insert(contact)
 
     override suspend fun deleteItem(contact: Contact) = itemDao.delete(contact)
 
