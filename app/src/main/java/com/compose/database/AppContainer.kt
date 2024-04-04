@@ -6,7 +6,7 @@ import android.content.Context
  * App container for Dependency injection.
  */
 interface AppContainer {
-    val itemsRepository: ContactRepository
+    val contactRepository: ContactRepository
 }
 
 /**
@@ -16,7 +16,7 @@ class AppDataContainer(private val context: Context) : AppContainer {
     /**
      * Implementation for [ContactRepository]
      */
-    override val itemsRepository: ContactRepository by lazy {
+    override val contactRepository: ContactRepository by lazy {
         OfflineContactRepository(ContactDatabase.getDatabase(context).contactDao())
     }
 }
