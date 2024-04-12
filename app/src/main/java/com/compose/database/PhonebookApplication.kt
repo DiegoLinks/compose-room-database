@@ -2,7 +2,7 @@ package com.compose.database
 
 import android.app.Application
 
-class InventoryApplication : Application() {
+class PhonebookApplication : Application() {
 
     /**
      * AppContainer instance used by the rest of classes to obtain dependencies

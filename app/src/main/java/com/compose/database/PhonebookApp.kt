@@ -16,9 +16,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.compose.database.R.string
 
-/**
- * Top level composable that represents screens for the application.
- */
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun PhonebookApp(navController: NavHostController = rememberNavController()) {
