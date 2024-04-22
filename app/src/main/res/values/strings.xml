@@ -3,4 +3,9 @@
     <string name="back_button">Back</string>
     <string name="contact_entry_title">Add Contact</string>
     <string name="no_contact_description">Oops!\nNo contacts in the phonebook.\nTap + to add.</string>
+    <string name="save_action">Save</string>
+    <string name="contact_name_req">Name*</string>
+    <string name="contact_phone_req">Phone*</string>
+    <string name="contact_email">Email</string>
+    <string name="required_fields">*required fields</string>
 </resources>
