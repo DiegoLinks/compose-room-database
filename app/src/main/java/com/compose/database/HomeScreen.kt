@@ -43,6 +43,7 @@ object HomeDestination : NavigationDestination {
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun HomeScreen(
+    navigateToContactEntry: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
@@ -58,7 +59,7 @@ fun HomeScreen(
         },
         floatingActionButton = {
             FloatingActionButton(
-                onClick = {  },//navigateToContactEntry,
+                onClick = navigateToContactEntry,
                 shape = MaterialTheme.shapes.medium,
                 modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_large))
             ) {
@@ -70,8 +71,8 @@ fun HomeScreen(
         },
     ) { innerPadding ->
         HomeBody(
-            contactList = listOf(),
-            onItemClick = {  },
+            contactList = listOf(),//homeUiState.contactList,
+            onItemClick = {  },//navigateToContactUpdate,
             modifier = modifier
                 .padding(innerPadding)
                 .fillMaxSize()

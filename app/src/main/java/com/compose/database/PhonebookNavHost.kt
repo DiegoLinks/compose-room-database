@@ -21,7 +21,15 @@ fun PhonebookNavHost(
         modifier = modifier
     ) {
         composable(route = HomeDestination.route) {
-            HomeScreen()
+            HomeScreen(
+                navigateToContactEntry = { navController.navigate(ContactEntryDestination.route) },
+            )
+        }
+        composable(route = ContactEntryDestination.route) {
+            ContactEntryScreen(
+                navigateBack = { navController.popBackStack() },
+                onNavigateUp = { navController.navigateUp() }
+            )
         }
     }
 }

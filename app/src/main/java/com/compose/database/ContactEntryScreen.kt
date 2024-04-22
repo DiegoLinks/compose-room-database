@@ -91,6 +91,7 @@ fun ContactEntryBody(
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ContactInputForm(
     contactDetails: ContactDetails,
