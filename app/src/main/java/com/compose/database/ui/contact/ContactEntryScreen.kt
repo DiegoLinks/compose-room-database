@@ -1,4 +1,4 @@
-package com.compose.database
+package com.compose.database.ui.contact
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -22,6 +22,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.compose.database.AppViewModelProvider
+import com.compose.database.NavigationDestination
+import com.compose.database.PhonebookTopAppBar
+import com.compose.database.R
 import com.compose.database.ui.theme.ComposeRoomDBTheme
 import kotlinx.coroutines.launch
 
@@ -52,7 +56,12 @@ fun ContactEntryScreen(
             contactUiState = viewModel.contactUiState,
             onItemValueChange = viewModel::updateUiState,
             onSaveClick = {
+                // Note: If the user rotates the screen very fast, the operation may get cancelled
+                // and the item may not be saved in the Database. This is because when config
+                // change occurs, the Activity will be recreated and the rememberCoroutineScope will
+                // be cancelled - since the scope is bound to composition.
                 coroutineScope.launch {
+                    //viewModel.saveItem()
                     navigateBack()
                 }
             },

@@ -1,4 +1,4 @@
-package com.compose.database
+package com.compose.database.ui.contact
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Arrangement
@@ -41,6 +41,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.compose.database.AppViewModelProvider
+import com.compose.database.Contact
+import com.compose.database.NavigationDestination
+import com.compose.database.PhonebookTopAppBar
+import com.compose.database.R
 import com.compose.database.ui.theme.ComposeRoomDBTheme
 import kotlinx.coroutines.launch
 
@@ -175,8 +180,7 @@ fun ContactDetails(
                 contactDetail = contact.name,
                 modifier = Modifier.padding(
                     horizontal = dimensionResource(
-                        id = R.dimen
-                            .padding_medium
+                        id = R.dimen.padding_medium
                     )
                 )
             )
@@ -185,8 +189,7 @@ fun ContactDetails(
                 contactDetail = contact.phoneNumber,
                 modifier = Modifier.padding(
                     horizontal = dimensionResource(
-                        id = R.dimen
-                            .padding_medium
+                        id = R.dimen.padding_medium
                     )
                 )
             )
@@ -195,8 +198,7 @@ fun ContactDetails(
                 contactDetail = contact.email,
                 modifier = Modifier.padding(
                     horizontal = dimensionResource(
-                        id = R.dimen
-                            .padding_medium
+                        id = R.dimen.padding_medium
                     )
                 )
             )
@@ -240,7 +242,8 @@ private fun DeleteConfirmationDialog(
 @Composable
 fun ContactDetailsScreenPreview() {
     ComposeRoomDBTheme {
-        ContactDetailsBody(ContactDetailsUiState(
+        ContactDetailsBody(
+            ContactDetailsUiState(
             contactDetails = ContactDetails(1, "Pen", "999999999", "my@mail.com")
         ), onDelete = {})
     }
