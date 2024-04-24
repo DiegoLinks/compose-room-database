@@ -1,4 +1,4 @@
-package com.compose.database
+package com.compose.database.ui.home
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.clickable
@@ -29,6 +29,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.compose.database.Contact
+import com.compose.database.NavigationDestination
+import com.compose.database.PhonebookTopAppBar
+import com.compose.database.R
 import com.compose.database.ui.theme.ComposeRoomDBTheme
 
 object HomeDestination : NavigationDestination {

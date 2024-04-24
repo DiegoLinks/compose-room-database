@@ -1,7 +1,9 @@
-package com.compose.database
+package com.compose.database.ui.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.compose.database.Contact
+import com.compose.database.ContactRepository
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map
