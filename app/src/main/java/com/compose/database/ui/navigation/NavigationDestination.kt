@@ -1,4 +1,4 @@
-package com.compose.database
+package com.compose.database.ui.navigation
 
 interface NavigationDestination {
     val route: String

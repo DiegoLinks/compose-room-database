@@ -41,9 +41,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.compose.database.AppViewModelProvider
-import com.compose.database.Contact
-import com.compose.database.NavigationDestination
+import com.compose.database.ui.AppViewModelProvider
+import com.compose.database.data.Contact
+import com.compose.database.ui.navigation.NavigationDestination
 import com.compose.database.PhonebookTopAppBar
 import com.compose.database.R
 import com.compose.database.ui.theme.ComposeRoomDBTheme

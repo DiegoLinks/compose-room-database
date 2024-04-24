@@ -1,4 +1,4 @@
-package com.compose.database
+package com.compose.database.data
 
 import android.content.Context
 

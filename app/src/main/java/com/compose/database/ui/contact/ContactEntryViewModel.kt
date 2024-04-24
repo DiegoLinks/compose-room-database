@@ -4,8 +4,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import com.compose.database.Contact
-import com.compose.database.ContactRepository
+import com.compose.database.data.Contact
+import com.compose.database.data.ContactRepository
 
 /**
  * ViewModel to validate and insert contacts in the Room database.

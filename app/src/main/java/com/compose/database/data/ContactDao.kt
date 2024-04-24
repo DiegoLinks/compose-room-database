@@ -1,4 +1,4 @@
-package com.compose.database
+package com.compose.database.data
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -6,6 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
+import com.compose.database.data.Contact
 import kotlinx.coroutines.flow.Flow
 
 @Dao
