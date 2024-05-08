@@ -21,6 +21,8 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
@@ -29,10 +31,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.compose.database.Contact
-import com.compose.database.NavigationDestination
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.compose.database.data.Contact
+import com.compose.database.ui.navigation.NavigationDestination
 import com.compose.database.PhonebookTopAppBar
 import com.compose.database.R
+import com.compose.database.ui.AppViewModelProvider
 import com.compose.database.ui.theme.ComposeRoomDBTheme
 
 object HomeDestination : NavigationDestination {
@@ -48,8 +52,11 @@ object HomeDestination : NavigationDestination {
 @Composable
 fun HomeScreen(
     navigateToContactEntry: () -> Unit,
+    navigateToContactUpdate: (Int) -> Unit,
     modifier: Modifier = Modifier,
+    viewModel: HomeViewModel = viewModel(factory = AppViewModelProvider.Factory)
 ) {
+    val homeUiState by viewModel.homeUiState.collectAsState()
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
 
     Scaffold(
@@ -75,8 +82,8 @@ fun HomeScreen(
         },
     ) { innerPadding ->
         HomeBody(
-            contactList = listOf(),//homeUiState.contactList,
-            onItemClick = {  },//navigateToContactUpdate,
+            contactList = homeUiState.contactList,
+            onItemClick = navigateToContactUpdate,
             modifier = modifier
                 .padding(innerPadding)
                 .fillMaxSize()
