@@ -142,7 +142,6 @@ fun ContactInputForm(
         OutlinedTextField(
             value = contactDetails.email,
             onValueChange = { onValueChange(contactDetails.copy(email = it)) },
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             label = { Text(stringResource(R.string.contact_email)) },
             colors = OutlinedTextFieldDefaults.colors(
                 focusedContainerColor = MaterialTheme.colorScheme.secondaryContainer,
