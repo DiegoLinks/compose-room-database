@@ -21,11 +21,11 @@ import com.compose.database.ui.navigation.NavigationDestination
 import com.compose.database.ui.theme.ComposeRoomDBTheme
 import kotlinx.coroutines.launch
 
-object ItemEditDestination : NavigationDestination {
+object ContactEditDestination : NavigationDestination {
     override val route = "contact_edit"
     override val titleRes = R.string.contact_item_title
-    const val itemIdArg = "itemId"
-    val routeWithArgs = "$route/{$itemIdArg}"
+    const val contactIdArg = "contactId"
+    val routeWithArgs = "$route/{$contactIdArg}"
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -40,7 +40,7 @@ fun ContactEditScreen(
     Scaffold(
         topBar = {
             PhonebookTopAppBar(
-                title = stringResource(ItemEditDestination.titleRes),
+                title = stringResource(ContactEditDestination.titleRes),
                 canNavigateBack = true,
                 navigateUp = onNavigateUp
             )
@@ -56,7 +56,7 @@ fun ContactEditScreen(
                 // change occurs, the Activity will be recreated and the rememberCoroutineScope will
                 // be cancelled - since the scope is bound to composition.
                 coroutineScope.launch {
-                    //viewModel.updateItem()
+                    viewModel.updateContact()
                     navigateBack()
                 }
             },

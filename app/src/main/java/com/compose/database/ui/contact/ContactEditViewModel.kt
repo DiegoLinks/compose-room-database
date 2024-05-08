@@ -22,7 +22,7 @@ class ContactEditViewModel(
     var contactUiState by mutableStateOf(ContactUiState())
         private set
 
-    private val itemId: Int = checkNotNull(savedStateHandle[ItemEditDestination.itemIdArg])
+    private val itemId: Int = checkNotNull(savedStateHandle[ContactEditDestination.contactIdArg])
 
     init {
         viewModelScope.launch {
