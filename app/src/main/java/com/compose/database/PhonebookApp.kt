@@ -15,6 +15,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.compose.database.R.string
+import com.compose.database.ui.navigation.PhonebookNavHost
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable

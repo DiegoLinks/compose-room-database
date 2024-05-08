@@ -3,8 +3,14 @@ package com.compose.database.ui.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.navArgument
+import com.compose.database.ui.contact.ContactDetailsDestination
+import com.compose.database.ui.contact.ContactDetailsScreen
+import com.compose.database.ui.contact.ContactEditDestination
+import com.compose.database.ui.contact.ContactEditScreen
 import com.compose.database.ui.contact.ContactEntryDestination
 import com.compose.database.ui.contact.ContactEntryScreen
 import com.compose.database.ui.home.HomeDestination
@@ -27,9 +33,9 @@ fun PhonebookNavHost(
         composable(route = HomeDestination.route) {
             HomeScreen(
                 navigateToContactEntry = { navController.navigate(ContactEntryDestination.route) },
-//                navigateToContactUpdate = {
-//                    navController.navigate("${ItemDetailsDestination.route}/${it}")
-//                }
+                navigateToContactUpdate = {
+                    navController.navigate("${ContactDetailsDestination.route}/${it}")
+                }
             )
         }
         composable(route = ContactEntryDestination.route) {
@@ -38,27 +44,27 @@ fun PhonebookNavHost(
                 onNavigateUp = { navController.navigateUp() }
             )
         }
-//        composable(
-//            route = ItemDetailsDestination.routeWithArgs,
-//            arguments = listOf(navArgument(ItemDetailsDestination.itemIdArg) {
-//                type = NavType.IntType
-//            })
-//        ) {
-//            ItemDetailsScreen(
-//                navigateToEditItem = { navController.navigate("${ItemEditDestination.route}/$it") },
-//                navigateBack = { navController.navigateUp() }
-//            )
-//        }
-//        composable(
-//            route = ItemEditDestination.routeWithArgs,
-//            arguments = listOf(navArgument(ItemEditDestination.itemIdArg) {
-//                type = NavType.IntType
-//            })
-//        ) {
-//            ItemEditScreen(
-//                navigateBack = { navController.popBackStack() },
-//                onNavigateUp = { navController.navigateUp() }
-//            )
-//        }
+        composable(
+            route = ContactDetailsDestination.routeWithArgs,
+            arguments = listOf(navArgument(ContactDetailsDestination.contactIdArg) {
+                type = NavType.IntType
+            })
+        ) {
+            ContactDetailsScreen(
+                navigateToEditContact = { navController.navigate("${ContactEditDestination.route}/$it") },
+                navigateBack = { navController.navigateUp() }
+            )
+        }
+        composable(
+            route = ContactEditDestination.routeWithArgs,
+            arguments = listOf(navArgument(ContactEditDestination.contactIdArg) {
+                type = NavType.IntType
+            })
+        ) {
+            ContactEditScreen(
+                navigateBack = { navController.popBackStack() },
+                onNavigateUp = { navController.navigateUp() }
+            )
+        }
     }
 }
