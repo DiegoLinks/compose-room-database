@@ -7,6 +7,7 @@ import androidx.lifecycle.viewmodel.CreationExtras
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.compose.database.PhonebookApplication
+import com.compose.database.ui.contact.ContactDetailsViewModel
 import com.compose.database.ui.contact.ContactEditViewModel
 import com.compose.database.ui.contact.ContactEntryViewModel
 import com.compose.database.ui.home.HomeViewModel
@@ -25,7 +26,10 @@ object AppViewModelProvider {
         }
 
         initializer {
-            ContactEntryViewModel(inventoryApplication().container.contactRepository)
+            ContactDetailsViewModel(
+                this.createSavedStateHandle(),
+                inventoryApplication().container.contactRepository
+            )
         }
 
         initializer {
