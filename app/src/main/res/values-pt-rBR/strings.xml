@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lista de contatos</string>
+    <string name="back_button">Voltar</string>
+    <string name="contact_entry_title">Adicionar Contato</string>
+    <string name="no_contact_description">Oops!\nVocê ainda não adicionou nenhum contato.\nClique em + para adicionar.</string>
+    <string name="save_action">Salvar</string>
+    <string name="contact_name_req">Nome*</string>
+    <string name="contact_phone_req">Telefone*</string>
+    <string name="contact_email">E-mail</string>
+    <string name="required_fields">*campos obrigatórios</string>
+    <string name="contact_detail_title">Detalhes do contato</string>
+    <string name="edit_contact_title">Editar Contato</string>
+    <string name="contact">Contato</string>
+    <string name="phone_number">Número de telefone</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="attention">Atenção</string>
+    <string name="delete">Apagar</string>
+    <string name="delete_question">Você tem certeza que quer apagar?</string>
+    <string name="contact_item_title">Contato</string>
+</resources>
